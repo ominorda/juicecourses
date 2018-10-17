@@ -24,7 +24,7 @@ docker rm name_of_container // Remove the container
 ```
 
 ```
-docker rm db -f // Remove the container even if it is running
+docker rm name_of_container -f // Remove the container even if it is running
 ```
 
 ```
@@ -48,7 +48,7 @@ docker run --name db -d mongo // Run the mongo container in background
 ```
 
 ```
-docker exec -it db bash // Execute the container bash command
+docker exec -it name_of_container bash // Execute the container bash command
 ```
 
 ```
@@ -63,25 +63,25 @@ docker start name_of_container // Start the container
 
 ```
 // Create a volume for a mongo database
-docker run --name db -d -v path_of_my_computer:data/db mongo
+docker run --name name_of_container -d -v path_of_my_computer:data/db mongo
 ```
 
 ```
-docker exec -it db bash // Enter the bash process of db
+docker exec -it name_of_container bash // Enter the bash process of name_of_container
 ```
 
 ```
-docker rm -f db // Delete the container but not the filesystem / volume
+docker rm -f name_of_container // Delete the container but not the filesystem / volume
 ```
 ### 4.- Binding
 
 ```
 // Bind machine port / container port with the flag -p
-docker run -d --name db -p 27017:27017 mongo
+docker run -d --name name_of_container -p 27017:27017 mongo
 ```
 
 ```
-docker run -d --name db -p 27017:27017 mongo:3.0 // Binde ports and a specific version of the container
+docker run -d --name name_of_container -p 27017:27017 mongo:3.0 // Binde ports and a specific version of the container
 ```
 
 ### 5.- Docker images
